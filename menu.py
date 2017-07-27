@@ -40,20 +40,3 @@ class Menu:
 			notes = self.notebook.notes
 		for note in notes:
 			print("{0}: {1}\n{2}".format(note.id, note.tags, note.memo))
-
-	def search_notes(self):
-		filter = input("Search for: ")
-		notes = self.notebook.search(filter)
-		self.show_notes(notes)
-
-	def add_note(self):
-		memo = input("Enter a memo: ")
-		self.notebook.new_note(memo)
-		print("Your note has been added.")
-
-	def modify_note(self):
-		id = input("Enter a note id: ")
-		memo = input("Enter a memo: ")
-		tags = input("Enter tags: ")
-		if memo:
-			self.notebook.modify_memo(id, memo)
